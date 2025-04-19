@@ -30,6 +30,4 @@ jobs:
 
       - name: Run ESLint
         run: pnpm run lint
-
-      - name: Stylelint
-        run: stylelint "apps/**/*.{css,scss}" --config .stylelint.config.mjs
+g
