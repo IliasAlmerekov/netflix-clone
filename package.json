@@ -9,7 +9,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "husky install",
     "lint": "eslint . --ext .ts,.tsx",
-    "stylelint": "stylelint '**/*.{css,scss}' --fix"
+    "stylelint": "stylelint 'apps/**/*.{css,scss}'"
   },
   "keywords": [],
   "author": "",
@@ -40,6 +40,7 @@
     "stylelint": "^16.18.0",
     "stylelint-config-prettier": "^9.0.5",
     "stylelint-config-standard": "^38.0.0",
+    "stylelint-scss": "^6.11.1",
     "typescript": "~5.7.2"
   }
 }
