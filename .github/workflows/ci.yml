@@ -1,4 +1,4 @@
-name: CI Pipeline
+name: CI
 
 on:
   push:
@@ -7,30 +7,27 @@ on:
     branches: [main, staging]
 
 jobs:
-  lint-and-build:
+  lint:
+    name: Lint & Build
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Node
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'pnpm'
 
       - name: Install pnpm
-        run: npm i -g pnpm
+        run: npm install -g pnpm
 
       - name: Install dependencies
         run: pnpm install
 
       - name: Lint
-        run: pnpm run eslint
-
-      - name: Stylelint
-        run: pnpm run stylelint || echo "Stylelint failed, but continuing."
+        run: pnpm run lint
 
       - name: Build
         run: pnpm run build
