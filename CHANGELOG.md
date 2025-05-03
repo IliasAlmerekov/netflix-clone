@@ -7,6 +7,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [0.0.2] - 2025-05-02
+
+## Added
+
+- Added full ESLint configuration using Flat Config with TS, React, React Hooks and a11ly rules
+- Integrated Prettier with custom formatting rules
+- Added Stylelint with standard config
+- Setup Husky with pre-commit hooks running esling, stylelint, prettier and lint-staged
+- Configured Commitlint with conventional commits
+- Created Dockerfile for preview builds
+  -Configured GitHub Actions CI (Lint, Build, Docker)
+  -Created `staging` and `main` branches with protection rules
+- Improved `README.md` with setup and usage instructions
+
+## Changed
+
+- Switched project structure to Classic Flat (removed FSD)
+- Cleaned up reset old project state
+
 ## [0.0.1] — 2025-05-02
 
 ### Added
