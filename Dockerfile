@@ -1,18 +1,18 @@
 # 1. Use official node image
-FROM node:20-alpine
+FROM node:23-slim
 
 # 2. Set working directory
 WORKDIR /app
 
-# 3. Copy package.json and isntall deps
+# 3. Copy and install dependencies
 COPY package.json pnpm-lock.yaml ./
 RUN npm install -g pnpm && pnpm install
 
-# 4. Copy the rest of the app
+# 4. Copy source code
 COPY . .
 
 # 5. Build the app
 RUN pnpm run build
 
-# 6. Default command
+# 6. Preview the build
 CMD ["pnpm", "run", "preview"]

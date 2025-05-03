@@ -2,9 +2,9 @@ name: CI
 
 on:
   push:
-    branches: [main]
+    branches: [main, staging]
   pull_request:
-    branches: [main]
+    branches: [main, staging]
 
 jobs:
   lint:
@@ -12,10 +12,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Node.js & install pnpm
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -26,11 +26,11 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Run ESLint
-        run: pnpm run lint
+      - name: Lint
+        run: pnpm run eslint
 
-      - name: Run Stylelint
-        run: pnpm run stylelint
+      - name: Build
+        run: pnpm run build
 
-      - name: Build Docker image
+      - name: Docker build test
         run: docker build -t netflix-clone .
