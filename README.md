@@ -1,54 +1,80 @@
-# React + TypeScript + Vite
+# 🎬 NetflixClone
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A fully functional, production-ready clone of [Netflix](https://www.netflix.com/) built with modern technologies and best practices in 2025.
 
-Currently, two official plugins are available:
+## 🚀 Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Frontend:** React 19, TypeScript, Vite
+- **State Management:** React Context, custom hooks (later Redux/RTK if needed)
+- **Routing:** React Router DOM 7
+- **Styling:** CSS Modules + Stylelint
+- **Code Quality:** ESLint, Prettier, Commitlint, Husky, Lint-Staged
+- **CI/CD:** GitHub Actions
+- **Package Manager:** pnpm
+- **Containerization:** Docker
 
-## Expanding the ESLint configuration
+## 📦 Installation
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+```bash
+pnpm install
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+💻 Development
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+pnpm run dev
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+🧪 Linting & Formatting
+
+pnpm run eslint       # ESLint check
+pnpm run stylelint    # Stylelint check
+pnpm run format       # Prettier formatting
+
+📦 Build
+
+pnpm run build
+
+🐳 Docker
+
+docker build -t netflix-clone .
+docker run -p 4173:4173 netflix-clone
+
+🔐 Git Hooks (Husky)
+Hooks are automatically installed after pnpm install.
+
+pnpm run prepare
+
+📄 Project Structure
+
+src/
+├── app/              # Root App component and providers
+├── pages/            # Route-level components
+├── components/       # Reusable UI components
+├── assets/           # Images, icons, fonts
+├── styles/           # Global styles and variables
+├── shared/           # Shared utils, types, lib
+├── index.css
+└── main.tsx
+
+✅ CI/CD
+Pull Requests and pushes to main or staging trigger:
+
+Lint check (eslint, stylelint)
+
+Docker build verification
+
+📝 Commit Conventions
+We follow Conventional Commits:
+
+Examples:
+
+git commit -m "feat: add hero section"
+git commit -m "fix: responsive layout for footer"
+
+📌 Versioning
+We use Keep a Changelog
+Current version: 0.0.1
+
+👨‍💻 Author
+Ilias Almerekov
+GitHub: @IliasAlmerekov
 ```
