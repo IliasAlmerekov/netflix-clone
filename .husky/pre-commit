@@ -1,7 +1,6 @@
 echo "🔍 Checking the code before committing..."
 
-npm run eslint
-
-npm run stylelint
-
-npx lint-staged
+npx lint-staged || {
+  echo "💀❌ Lint-staged failed. Commit aborted.";
+  exit 1;
+}
