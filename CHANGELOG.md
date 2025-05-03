@@ -11,8 +11,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Added
 
--Created base production-ready `src/` structure with many folders
-
+- Installed `react-router-dom` with TypeScript support
+- Created `LandingPage.tsx` and CSS module
+- Implemented routing with path `/`
+- Hooked up `AppRouter` into `App.tsx`
+- Created base production-ready `src/` structure with many folders
 - Added full ESLint configuration using Flat Config with TS, React, React Hooks and a11ly rules
 - Integrated Prettier with custom formatting rules
 - Added Stylelint with standard config
