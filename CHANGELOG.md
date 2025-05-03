@@ -7,9 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
-## [0.0.2] - 2025-05-02
+## [0.0.2] - 2025-05-03
 
 ## Added
+
+-Created base production-ready `src/` structure with many folders
 
 - Added full ESLint configuration using Flat Config with TS, React, React Hooks and a11ly rules
 - Integrated Prettier with custom formatting rules
